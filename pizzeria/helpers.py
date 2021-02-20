@@ -1,7 +1,7 @@
 from .types import PIZZAS
 
-def get_unique_ingradients(listOfPizzas):
-    ingradients = []
+def get_unique_ingredients(listOfPizzas):
+    ingredients = []
     for pizza in listOfPizzas:
-        ingradients += PIZZAS[pizza]
-    return set(sorted(ingradients))
+        ingredients += PIZZAS[pizza]
+    return set(sorted(ingredients))

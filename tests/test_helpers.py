@@ -1,21 +1,21 @@
 import unittest
-from pizzeria.helpers import get_unique_ingradients
+from pizzeria.helpers import get_unique_ingredients
 from pizzeria.types import PIZZAS
 
 
 class HelpersTestCase(unittest.TestCase):
-    def test_unique_ingradients(self):
+    def test_unique_ingredients(self):
         pizzas = [0]
 
-        ingradients = get_unique_ingradients(pizzas)
+        ingredients = get_unique_ingredients(pizzas)
 
-        self.assertEqual(ingradients,set(PIZZAS[0]))
+        self.assertEqual(ingredients,set(PIZZAS[0]))
 
     
-    def test_unique_all_ingradients(self):
+    def test_unique_all_ingredients(self):
         pizzas = [0,1,2,3,4]
 
-        result = get_unique_ingradients(pizzas)
+        result = get_unique_ingredients(pizzas)
 
         expected_result = set(sorted([
             "onion",
