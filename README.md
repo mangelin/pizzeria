@@ -50,7 +50,8 @@ $ docker-compose -f dev.yml run --rm pizzeria coverage report -m
 
 #### running the container
 
-To run the developement container you havo to use docker-compose:
+To run the developement container you have to use docker-compose command in order
+to mount local volumes:
 
 ```
 $ docker-compose -f dev.yml run --rm pizzeria
