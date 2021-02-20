@@ -26,6 +26,8 @@ $ coverage report -m
 
 ## Docker
 
+### build the container
+
 build the container:
 
 ```
@@ -46,7 +48,7 @@ $ docker-compose -f dev.yml run --rm pizzeria coverage run -m unittest
 $ docker-compose -f dev.yml run --rm pizzeria coverage report -m
 ```
 
-## Running container
+## running the container
 
 To run the developement container you havo to use docker-compose:
 
