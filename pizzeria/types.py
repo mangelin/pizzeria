@@ -1,4 +1,4 @@
-# Ingradients
+# Ingredients
 PIZZAS = [
     ['onion','pepper','olive'],
     ['mushroom','tomato','basil'],
