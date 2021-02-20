@@ -1,0 +1,7 @@
+version: '3.3'
+services:
+  pizzeria:
+    build:
+      context: .
+      dockerfile: ./docker/prd/Dockerfile
+    image: pizzeria-prd:0.1-alpine  

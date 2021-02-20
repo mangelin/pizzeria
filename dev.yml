@@ -1,0 +1,9 @@
+version: '3.3'
+services:
+  pizzeria:
+    build:
+      context: .
+      dockerfile: ./docker/dev/Dockerfile
+    image: pizzeria-dev:0.1-alpine  
+    volumes:
+        - ".:/app"
