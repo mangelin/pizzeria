@@ -1,23 +1,19 @@
 import unittest
 from pizzeria.helpers import get_unique_ingredients
-from pizzeria.types import PIZZAS
 
 
 class HelpersTestCase(unittest.TestCase):
-    def test_unique_ingredients(self):
-        pizzas = [0]
+    # From page 2 of practice_round_2021_v3.pdf
+    # Can they be reused?
+    SAMPLE_PIZZAS = [
+        ['onion', 'pepper', 'olive'],
+        ['mushroom', 'tomato', 'basil'],
+        ['chicken', 'mushroom', 'pepper'],
+        ['tomato', 'mushroom', 'basil'],
+        ['chicken', 'basil']
+    ]
 
-        ingredients = get_unique_ingredients(pizzas)
-
-        self.assertEqual(ingredients,set(PIZZAS[0]))
-
-    
-    def test_unique_all_ingredients(self):
-        pizzas = [0,1,2,3,4]
-
-        result = get_unique_ingredients(pizzas)
-
-        expected_result = set(sorted([
+    SAMPLE_UNIQUE_INGREDIENTS = set([
             "onion",
             "pepper",
             "mushroom",
@@ -25,7 +21,22 @@ class HelpersTestCase(unittest.TestCase):
             "chicken",
             "tomato",
             "olive"
-        ]))
+        ])
 
-        self.assertEqual(result, expected_result)
-    
+    def test_unique_ingredients(self):
+        pizzas = [
+            ["tomato", "mozzarella"],
+            ["olives", "tomato"]
+        ]
+        expected_unique_ingredients = set(["tomato", "mozzarella", "olives"])
+
+        ingredients = get_unique_ingredients(pizzas)
+
+        self.assertEqual(ingredients, expected_unique_ingredients)
+
+    def test_unique_ingredients_sample(self):
+        ingredients = get_unique_ingredients(self.SAMPLE_PIZZAS)
+
+        self.assertEqual(
+            ingredients,
+            self.SAMPLE_UNIQUE_INGREDIENTS)
