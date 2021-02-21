@@ -28,9 +28,5 @@ class Order(object):
         order = None
         with open(filename,'r') as fin:
             lines = fin.readlines()
-            order = Order.create(data)
+            order = Order.create(lines)
         return order
-
-            
-
-

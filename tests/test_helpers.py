@@ -1,5 +1,5 @@
 import unittest
-from pizzeria.helpers import get_unique_ingredients
+from pizzeria.helpers import get_unique_ingredients, calculate_score
 
 PIZZAS = [
     ['onion','pepper','olive'],
@@ -34,4 +34,19 @@ class HelpersTestCase(unittest.TestCase):
         ]))
 
         self.assertEqual(result, expected_result)
-    
+
+    def test_calculate_score(self):
+        pizzas_to_deliver = [
+            [1, 4],         # score: 16
+            [0, 2, 3]       # score: 49
+        ]
+
+        result = calculate_score([pizzas_to_deliver[0]], PIZZAS)
+        self.assertEqual(result, 16)
+
+        result = calculate_score([pizzas_to_deliver[1]], PIZZAS)
+        self.assertEqual(result, 49)
+
+        result = calculate_score(pizzas_to_deliver, PIZZAS)
+        self.assertEqual(result, 65)
+
