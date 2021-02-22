@@ -23,3 +23,11 @@ class OrderTestcase(unittest.TestCase):
         with patch("builtins.open", mock_open(read_data=self.raw_lines)) as mock_file:
             o = Order.load_from_file("path_to_file")
             self.assertEqual(o.m, len(self.lines)-1)
+
+    def test_load_from_file_example_a(self):
+        o = Order.load_from_file("input/a_example.in")
+        self.assertEqual(o.m, 5)
+
+    def test_load_from_file_example_b(self):
+        o = Order.load_from_file("input/b_little_bit_of_everything.in")
+        self.assertEqual(o.m, 500)
