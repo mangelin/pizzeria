@@ -27,6 +27,6 @@ class Order(object):
     def load_from_file(filename):
         order = None
         with open(filename,'r') as fin:
-            lines = fin.readlines()
+            lines = fin.read().splitlines()
             order = Order.create(lines)
         return order
