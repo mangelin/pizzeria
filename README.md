@@ -54,7 +54,7 @@ To run the developement container you have to use docker-compose command in orde
 to mount local volumes:
 
 ```
-$ docker-compose -f dev.yml run --rm pizzeria
+docker-compose -f dev.yml run -e MPU_INPUT_FILE=./input/a_example.in --rm pizzeria
 ```
 
 The production container can be executed directly using
